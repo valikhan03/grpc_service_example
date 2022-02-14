@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package proto;
+
+import "proto/product_message.proto";
+import "proto/product_filter_message.proto";
+
+option go_package = "/pb";
+
+message CreateProductRequest{
+    Product product = 1;
+}
+
+message CreateProductResponse{
+    string id = 1;
+}
+
+
+message SearchProductRequest {
+    ProductFilter filter = 1;
+}
+
+message SearchProductResponse{
+    Product product = 1;
+}
+
+service ProductService{
+    rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse) {};
+    rpc SearchProduct(SearchProductRequest) returns (stream SearchProductResponse) {};
+}
+

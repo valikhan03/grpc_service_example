@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package="/pb";
+
+
+message Product {
+    string id = 1;
+    string title = 2;
+    uint32 price = 3;
+    string category = 4;
+    float rating = 5;
+    string description = 6;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package="/pb";
+
+message ProductFilter{
+    uint32 max_price = 1;
+    string category = 2;
+    float rating = 3;
+}
